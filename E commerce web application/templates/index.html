@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>Online Store</h1>
+<a href="/cart">View Cart</a>
+<hr>
+
+{% for product in products %}
+<div>
+    <h3>{{ product.name }}</h3>
+    <p>Price: ${{ product.price }}</p>
+    <a href="/add_to_cart/{{ product.id }}">
+        <button>Add to Cart</button>
+    </a>
+</div>
+<hr>
+{% endfor %}
+
+</body>
+</html>
